@@ -28,7 +28,7 @@ function ajouterUnePesee() {
 function finaliserRecolte() {
     var culture = document.getElementById('culture').value;
     var nbSacs = parseInt(document.getElementById('nbSacs').value) || 0;
-    var prixKilo = {'Cacao': 1500, 'Café': 900, 'Anacarde': 300, 'Hévéa': 350};
+    var prixKilo = {'Cacao': 2800, 'Café': 1700, 'Anacarde': 300, 'Hévéa': 368};
 
     var totalBrut = 0;
     for (var j = 0; j < listePeseesTemporaire.length; j++) {
@@ -69,4 +69,5 @@ function finaliserRecolte() {
     } else {
         alert('Vérifie tes pesées et le nombre de sacs');
     }
+
 }
