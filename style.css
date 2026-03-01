@@ -1,0 +1,7 @@
+body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; color: #333; }
+.container { max-width: 400px; margin: 20px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+header { text-align: center; color: #2e7d32; }
+select, input, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #ddd; }
+button { background-color: #2e7d32; color: white; border: none; font-weight: bold; cursor: pointer; }
+.stats { background: #e8f5e9; padding: 15px; border-radius: 8px; text-align: center; margin-top: 20px; }
+#total-revenu { font-size: 1.5rem; font-weight: bold; color: #1b5e20; }

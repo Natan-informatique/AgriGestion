@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriGestion CI - Calculateur de Récolte</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        /* Styles intégrés pour assurer un bon affichage immédiat */
+        .container { max-width: 500px; margin: auto; padding: 20px; font-family: Arial, sans-serif; }
+        .step-box { background: #f4f4f4; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 5px; }
+        .btn-add { background-color: #4CAF50; color: white; }
+        .btn-final { background-color: #2e7d32; color: white; font-size: 1.1rem; }
+        #infoPesee { font-weight: bold; color: #2e7d32; text-align: center; }
+        .stats { background: #e8f5e9; padding: 15px; border-radius: 8px; text-align: center; margin-top: 20px; }
+        #total-revenu { font-size: 1.5rem; font-weight: bold; color: #1b5e20; }
+        #liste-recoltes li { background: white; padding: 10px; margin-top: 10px; border-radius: 5px; border-left: 5px solid #2e7d32; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 20px;">
+    <img src="logo.jpeg" alt="Logo AgriGestion" style="width: 80px; height: auto; border-radius: 50%;">
+    
+    <h1 style="margin-top: 10px;">AgriGestion 🇨🇮</h1>
+    <p>Gestionnaire de pesées pour planteurs</p>
+</header>
+
+        <div class="step-box">
+            <h3>Étape 1 : Peser les sacs</h3>
+            <label>Choisir le produit :</label>
+            <select id="culture">
+                <option value="Cacao">Cacao (2800 F/kg)</option>
+                <option value="Café">Café (1700 F/kg)</option>
+                <option value="Anacarde">Anacarde (300 F/kg)</option>
+                <option value="Hévéa">Hévéa (368 F/kg)</option>
+            </select>
+
+            <label>Poids du pesage actuel (kg) :</label>
+            <input type="number" id="poidsPesee" placeholder="Ex: 65.5" step="0.1">
+            <button class="btn-add" onclick="ajouterUnePesee()">+ Ajouter cette pesée</button>
+            
+            <p id="infoPesee">Total cumulé : 0 kg (0 pesées)</p>
+        </div>
+
+        <div class="step-box">
+            <h3>Étape 2 : Déduire la tare</h3>
+            <label>Nombre total de sacs :</label>
+            <input type="number" id="nbSacs" placeholder="Ex: 12">
+            <button class="btn-final" onclick="finaliserRecolte()">VALIDER LA VENTE</button>
+        </div>
+
+        <div class="stats">
+            <h3>RECETTE TOTALE</h3>
+            <div id="total-revenu">0 FCFA</div>
+        </div>
+
+        <h3>Historique des tickets</h3>
+        <ul id="liste-recoltes">
+            </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
